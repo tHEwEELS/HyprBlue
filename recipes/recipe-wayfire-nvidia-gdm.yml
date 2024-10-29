@@ -11,3 +11,4 @@ modules:
   - from-file: common/nvidia-modules.yml
   - from-file: common/gdm-modules.yml
   - from-file: common/wayfire-modules.yml
+  - from-file: common/final-modules.yml

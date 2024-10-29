@@ -10,7 +10,6 @@ modules:
     - type: script
       scripts:
         - installsignedkernel.sh
-        - removeunusedrepos.sh
 
     - type: containerfile
       snippets:
