@@ -4,7 +4,7 @@ description: ublue images for wayland compositors
 
 base-image: quay.io/fedora-ostree-desktops/sericea
 
-image-version: 40
+image-version: 41
 
 modules:
   - from-file: common/remove-sddm.yml
@@ -15,3 +15,4 @@ modules:
   - type: script
     scripts:
       - setswaynvidiaenvironment.sh
+  - from-file: common/final-modules.yml
