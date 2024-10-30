@@ -61,7 +61,6 @@ modules:
         - vim
         - just
         - alsa-firmware
-        - heif-pixbuf-loader
         - p7zip
         - unrar
         
