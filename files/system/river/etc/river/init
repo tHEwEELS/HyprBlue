@@ -177,6 +177,7 @@ riverctl spawn "/usr/libexec/xfce-polkit"
 riverctl spawn waybar
 riverctl spawn kanshi
 riverctl spawn nm-applet
+riverctl spawn "swaybg --image /usr/share/backgrounds/f41/default/f41-01-night.png"
 
 exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=secrets
