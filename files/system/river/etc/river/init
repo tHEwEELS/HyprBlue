@@ -170,9 +170,6 @@ riverctl map normal Super Escape spawn "swaylock -f"
 riverctl map normal None Print spawn 'grim -g "$(slurp -d)" - | wl-copy'
 
 riverctl spawn dunst
-riverctl spawn pipewire
-riverctl spawn pipewire-pulse
-riverctl spawn wireplumber
 riverctl spawn "/usr/libexec/xfce-polkit"
 riverctl spawn waybar
 riverctl spawn kanshi
