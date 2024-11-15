@@ -169,10 +169,23 @@ riverctl map normal Super Escape spawn "swaylock -f"
 
 riverctl map normal None Print spawn 'grim -g "$(slurp -d)" - | wl-copy'
 
-riverctl spawn dunst
-riverctl spawn pipewire
-riverctl spawn pipewire-pulse
-riverctl spawn wireplumber
+#
+# These services should be started by default by systemd when
+# graphical-session.target is reached. If you prefer to launch via tty, you'll
+# want to turn these back on, otherwise screensharing and the like may be
+# broken.
+#
+# For a complete list of units systemd spawns for you, run this command:
+#   systemctl --user list-dependencies graphical-session.target
+#
+# Any service under basic.target you'll get in a tty, but you'll need to log in
+# through your DM to get graphical-session.target
+#
+
+#riverctl spawn dunst
+#riverctl spawn pipewire
+#riverctl spawn pipewire-pulse
+#riverctl spawn wireplumber
 riverctl spawn "/usr/libexec/xfce-polkit"
 riverctl spawn waybar
 riverctl spawn kanshi
