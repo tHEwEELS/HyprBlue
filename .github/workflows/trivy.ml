@@ -2,7 +2,7 @@ name: trivy
 on:
   schedule:
     - cron: "00 8 * * *" # build at 8:00 UTC every day 
-                         # 120 minutes after secureblue images start building
+
   push:
     branches:
       - live
