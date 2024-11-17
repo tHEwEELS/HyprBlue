@@ -22,6 +22,7 @@ jobs:
         with:
           image-ref: 'ghcr.io/wayblueorg/hyprland:latest'
           format: template
+          scanners: vuln,secret,misconfig
           template: '@/contrib/sarif.tpl'
           output: trivy-results.sarif
           timeout: 30m0s
