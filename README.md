@@ -10,6 +10,7 @@
 
 
 [![wayblue](https://github.com/wayblueorg/wayblue/actions/workflows/build.yml/badge.svg)](https://github.com/wayblueorg/wayblue/actions/workflows/build.yml)
+[![trivy](https://github.com/wayblueorg/wayblue/actions/workflows/trivy.yml/badge.svg)](https://github.com/wayblueorg/wayblue/actions/workflows/trivy.yml)
 [![Discord](https://img.shields.io/discord/1202304549294190602?style=flat&logo=discord&logoColor=white&label=Discord&labelColor=%235F6AE9&color=%2333CB56)
 ](https://discord.gg/86fM55XfEq)
 
