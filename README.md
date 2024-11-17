@@ -144,7 +144,3 @@ ujust configure-nvidia-optimus
 ## Contributing
 
 Follow the [contributing documentation](CONTRIBUTING.md#contributing), and make sure to respect the [CoC](CODE_OF_CONDUCT.md).
-
-### Development
-
-For local Development [building locally](CONTRIBUTING.md#building-locally) is the recommended approach.
