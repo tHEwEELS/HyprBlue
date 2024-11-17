@@ -30,6 +30,7 @@ modules:
       scripts:
         - installandroidudev.sh
         - installrpmfusion.sh
+        - ensureautoupdates.sh
 
     - type: rpm-ostree
       install:
