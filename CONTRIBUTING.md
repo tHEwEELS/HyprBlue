@@ -22,11 +22,8 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 - [I Have a Question](#i-have-a-question)
 - [I Want To Contribute](#i-want-to-contribute)
 - [Reporting Bugs](#reporting-bugs)
-- [How to test incoming changes](#how-to-test-incoming-changes)
-- [Building Locally](#building-locally)
 - [Styleguides](#styleguides)
 - [Commit Messages](#commit-messages)
-- [Join The Project Team](#join-the-project-team)
 
 ## Code of Conduct
 
@@ -43,11 +40,6 @@ to secureblueadmin@proton.me
 
 > ### Legal Notice 
 > When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
-
-Generally speaking we try to follow the [Lazy Concensus](http://lazyconcens.us/) model of development to keep the builds healthy and ourselves happy. 
-   - If you're looking for concensus to make a decision post an issue for feedback and remember to account for timezones and weekends/holidays/work time. 
-   - We want people to be opinionated in their builds so we're more of a loose confederation of repos than a top-down org.
-   - Try not to merge your own stuff, ask for a review. At some point when we have enough reviewers we'll be turning on branch protection. 
 
 ### Reporting Bugs
 
@@ -87,10 +79,3 @@ refactor: share logic between 4d3d3d3 and flarhgunnstow
 style: convert tabs to spaces
 test: ensure Tayne retains clothing
 ```
-
-## Join The Project Team
-
-If you're interested in _maintaining_ something then let us know!
-
-## Attribution
-This guide is based on the **contributing.md**. [Make your own](https://contributing.md/)!
