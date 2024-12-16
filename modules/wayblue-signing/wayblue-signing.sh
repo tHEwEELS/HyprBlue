@@ -28,11 +28,8 @@ mv "/etc/pki/containers/$IMAGE_NAME.pub" "/etc/pki/containers/$IMAGE_REGISTRY_TI
 TEMPLATE_POLICY="$MODULE_DIRECTORY/signing/policy.json"
 POLICY_FILE="$CONTAINER_DIR/policy.json"
 
-if ! [ -f "$CONTAINER_DIR/policy.json" ]; then
+if ! [ -f "$POLICY_FILE" ]; then
   cp "$TEMPLATE_POLICY" "$POLICY_FILE"
-else
-  TEMPLATE_POLICY="/tmp/existing-policy-for-secureblue.json"
-  cp "$POLICY_FILE" "$TEMPLATE_POLICY"
 fi
 
 jq --arg image_registry "${IMAGE_REGISTRY}" \
@@ -46,7 +43,9 @@ jq --arg image_registry "${IMAGE_REGISTRY}" \
                 "type": "matchRepository"
             }
         }
-    ] } + .' "${TEMPLATE_POLICY}" > "${POLICY_FILE}"
+    ] } + .' "${POLICY_FILE}" > POLICY.tmp
+
+mv POLICY.tmp "${POLICY_FILE}"
 
 mv "$MODULE_DIRECTORY/signing/registry-config.yaml" "$CONTAINER_DIR/registries.d/$IMAGE_REGISTRY_TITLE.yaml"
 sed -i "s ghcr.io/IMAGENAME $IMAGE_REGISTRY g" "$CONTAINER_DIR/registries.d/$IMAGE_REGISTRY_TITLE.yaml"
