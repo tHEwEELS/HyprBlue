@@ -31,6 +31,7 @@ modules:
         - installandroidudev.sh
         - installrpmfusion.sh
         - ensureautoupdates.sh
+        - fixupstreamicdloaderbug.sh
 
     - type: rpm-ostree
       install:
@@ -112,7 +113,6 @@ modules:
         - dunst
 
       # theme and GUI
-        - adwaita-qt5
         - fontawesome-fonts-all
         - gnome-themes-extra
         - gnome-icon-theme
