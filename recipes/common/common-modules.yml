@@ -31,6 +31,7 @@ modules:
         - installandroidudev.sh
         - installrpmfusion.sh
         - ensureautoupdates.sh
+        - fixupstreamicdloaderbug.sh
 
     - type: rpm-ostree
       install:
