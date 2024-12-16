@@ -28,6 +28,13 @@ mv "/etc/pki/containers/$IMAGE_NAME.pub" "/etc/pki/containers/$IMAGE_REGISTRY_TI
 TEMPLATE_POLICY="$MODULE_DIRECTORY/signing/policy.json"
 POLICY_FILE="$CONTAINER_DIR/policy.json"
 
+if ! [ -f "$CONTAINER_DIR/policy.json" ]; then
+  cp "$TEMPLATE_POLICY" "$POLICY_FILE"
+else
+  TEMPLATE_POLICY="/tmp/existing-policy-for-secureblue.json"
+  cp "$POLICY_FILE" "$TEMPLATE_POLICY"
+fi
+
 jq --arg image_registry "${IMAGE_REGISTRY}" \
    --arg image_registry_title "${IMAGE_REGISTRY_TITLE}" \
    '.transports.docker |= 
