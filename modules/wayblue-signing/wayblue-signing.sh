@@ -27,7 +27,10 @@ if ! [ -f "$CONTAINER_DIR/policy.json" ]; then
     cp "$MODULE_DIRECTORY/signing/policy.json" "$CONTAINER_DIR/policy.json"
 fi
 
-mv "/usr/etc/pki/containers/$IMAGE_NAME.pub" "/usr/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
+# covering our bases here since /usr/etc is technically unsupported, reevaluate once bootc is the primary deployment tool
+cp "/usr/etc/pki/containers/$IMAGE_NAME.pub" "/usr/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
+cp "/usr/etc/pki/containers/$IMAGE_NAME.pub" "/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
+rm "/usr/etc/pki/containers/$IMAGE_NAME.pub"
 
 POLICY_FILE="$CONTAINER_DIR/policy.json"
 
@@ -43,7 +46,8 @@ jq --arg image_registry "${IMAGE_REGISTRY}" \
             }
         }
     ] } + .' "${POLICY_FILE}" > POLICY.tmp
-
+    
+# covering our bases here since /usr/etc is technically unsupported, reevaluate once bootc is the primary deployment tool
 cp POLICY.tmp /usr/etc/containers/policy.json
 cp POLICY.tmp /etc/containers/policy.json
 rm POLICY.tmp
