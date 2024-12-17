@@ -31,18 +31,19 @@ mv "/usr/etc/pki/containers/$IMAGE_NAME.pub" "/usr/etc/pki/containers/$IMAGE_REG
 
 POLICY_FILE="$CONTAINER_DIR/policy.json"
 
-yq -i -o=j '.transports.docker |=
-    {"'"$IMAGE_REGISTRY"'": [
-            {
-                "type": "sigstoreSigned",
-                "keyPath": "/usr/etc/pki/containers/'"$IMAGE_REGISTRY_TITLE"'.pub",
-                "signedIdentity": {
-                    "type": "matchRepository"
-                }
+jq --arg image_registry "${IMAGE_REGISTRY}" \
+   --arg image_registry_title "${IMAGE_REGISTRY_TITLE}" \
+   '.transports.docker |= 
+    { $image_registry: [
+        {
+            "type": "sigstoreSigned",
+            "keyPath": ("/usr/etc/pki/containers/" + $image_registry_title + ".pub"),
+            "signedIdentity": {
+                "type": "matchRepository"
             }
-        ]
-    }
-+ .' "$POLICY_FILE"
+        }
+    ] } + .' "${POLICY_FILE}" > POLICY.tmp
+mv POLICY.tmp "${POLICY_FILE}"
 
 mv "$MODULE_DIRECTORY/signing/registry-config.yaml" "$CONTAINER_DIR/registries.d/$IMAGE_REGISTRY_TITLE.yaml"
 sed -i "s ghcr.io/IMAGENAME $IMAGE_REGISTRY g" "$CONTAINER_DIR/registries.d/$IMAGE_REGISTRY_TITLE.yaml"
