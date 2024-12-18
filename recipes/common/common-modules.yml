@@ -39,7 +39,7 @@ modules:
         - rofi-wayland
 
       # environment
-        - power-profiles-daemon
+        - tuned-ppd
         - xorg-x11-server-Xwayland
         - headsetcontrol
         - mediainfo
