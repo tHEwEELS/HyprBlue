@@ -1,0 +1,16 @@
+modules:
+    - type: rpm-ostree
+      install:
+        - qtile
+        - xdg-desktop-portal-wlr
+        - xdg-desktop-portal-gtk
+        - foot
+        - swaylock
+        - swayidle
+        - python3-pywlroots
+        - python3-mypy
+
+    - type: files
+      files:
+        - source: system/qtile
+          destination: /
