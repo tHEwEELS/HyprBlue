@@ -170,3 +170,4 @@ modules:
         - addbrewjustimport.sh
 
     - type: wayblue-signing
+      source: local
