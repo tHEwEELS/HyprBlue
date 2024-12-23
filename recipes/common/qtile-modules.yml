@@ -5,7 +5,6 @@ modules:
         - xdg-desktop-portal-wlr
         - xdg-desktop-portal-gtk
         - foot
-        - swaylock
         - swayidle
         - python3-pywlroots
         - python3-mypy
@@ -14,3 +13,7 @@ modules:
       files:
         - source: system/qtile
           destination: /
+    
+    - type: script
+      snippets:
+        - rpm-ostree install https://kojipkgs.fedoraproject.org//packages/swaylock/1.7.2/4.fc41/x86_64/swaylock-1.7.2-4.fc41."${OS_ARCH}".rpm
