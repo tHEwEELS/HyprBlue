@@ -3,7 +3,7 @@
 # Tell build process to exit if there are any errors.
 set -euo pipefail
 
-CONTAINER_DIR="/usr/etc/containers"
+CONTAINER_DIR="/etc/containers"
 MODULE_DIRECTORY="${MODULE_DIRECTORY:-"/tmp/modules"}"
 IMAGE_NAME_FILE="${IMAGE_NAME//\//_}"
 IMAGE_REGISTRY_TITLE=$(echo "$IMAGE_REGISTRY" | cut -d'/' -f2-)
@@ -21,10 +21,6 @@ fi
 
 if ! [ -d "/usr/etc/pki/containers" ]; then
     mkdir -p "/usr/etc/pki/containers"
-fi
-
-if ! [ -f "$CONTAINER_DIR/policy.json" ]; then
-    cp "$MODULE_DIRECTORY/signing/policy.json" "$CONTAINER_DIR/policy.json"
 fi
 
 # covering our bases here since /usr/etc is technically unsupported, reevaluate once bootc is the primary deployment tool
