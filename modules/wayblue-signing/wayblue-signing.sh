@@ -24,9 +24,9 @@ if ! [ -d "/usr/etc/pki/containers" ]; then
 fi
 
 # covering our bases here since /usr/etc is technically unsupported, reevaluate once bootc is the primary deployment tool
-cp "/usr/etc/pki/containers/$IMAGE_NAME.pub" "/usr/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
-cp "/usr/etc/pki/containers/$IMAGE_NAME.pub" "/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
-rm "/usr/etc/pki/containers/$IMAGE_NAME.pub"
+cp "/etc/pki/containers/$IMAGE_NAME.pub" "/usr/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
+cp "/etc/pki/containers/$IMAGE_NAME.pub" "/etc/pki/containers/$IMAGE_REGISTRY_TITLE.pub"
+rm "/etc/pki/containers/$IMAGE_NAME.pub"
 
 POLICY_FILE="$CONTAINER_DIR/policy.json"
 
