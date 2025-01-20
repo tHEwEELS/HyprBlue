@@ -7,25 +7,7 @@ modules:
         - hyprpaper
         - hyprlock
         - hypridle
-        - cmake
-        - meson
-        - gcc
-        - gcc-c++
-        - libglvnd-devel
-        - hyprutils-devel
-        - aquamarine-devel
-        - libxkbcommon-devel
-        - libuuid-devel
-        - cairo-devel
-        - pango-devel
-        - libdrm-devel
-        - libinput-devel
-        - libXcursor-devel
-        - hyprlang-devel
-        - hyprcursor-devel
-        - wayland-protocols-devel
-        - wayland-devel
-        - mesa-libgbm-devel
+        - hyprland-devel
 
     - type: files
       files:
