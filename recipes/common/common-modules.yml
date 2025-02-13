@@ -1,4 +1,4 @@
-modules:    --mount=type=bind,from=akmods,src=/kernel-rpms,dst=/tmp/kernel-rpms \
+modules:
     - type: containerfile
       snippets:
         - COPY --from=ghcr.io/ublue-os/akmods:main-41 /rpms /tmp/rpms
