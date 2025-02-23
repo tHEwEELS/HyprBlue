@@ -5,11 +5,11 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
-
+wayblue_origin_conf="/usr/etc/river/init"
 river_conf="$HOME/.config/river/init"
 
-if [ -f "$river_conf" ]; then
-    river
-else
-    XDG_CONFIG_HOME=/usr/etc/ river
+if [ -f "$river_conf" || grep -q "ORIGIN: WAYBLUE" "$file"]; then
+    cp $wayblue_origin_conf $river_conf
 fi
+
+river
