@@ -9,8 +9,8 @@ wayblue_origin_conf="/usr/etc/river/init"
 river_conf="$HOME/.config/river/init"
 
 # Replace the homedir conf if it's missing or of wayblue origin
-if [ ! -f "$river_conf" || grep -q "ORIGIN: WAYBLUE" "$river_conf"]; then
-    cp $wayblue_origin_conf $river_conf
+if [ ! -f "$river_conf" ] || grep -q "ORIGIN: WAYBLUE" "$river_conf"; then
+    cp "$wayblue_origin_conf" "$river_conf"
 fi
 
 river
