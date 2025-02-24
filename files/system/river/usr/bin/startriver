@@ -7,7 +7,7 @@ river_conf="${XDG_CONFIG_HOME:-$HOME/.config}/river/init"
 
 # Replace the homedir conf if it's missing or of wayblue origin
 if [ ! -e "$river_conf" ] || grep -q "ORIGIN: WAYBLUE" "$river_conf"; then
-    [ -w "$river_conf" ] && cp "$wayblue_origin_conf" "$river_conf"
+    cp "$wayblue_origin_conf" "$river_conf"
 fi
 
 exec river
