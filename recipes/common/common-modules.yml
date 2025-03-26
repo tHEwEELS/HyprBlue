@@ -12,7 +12,6 @@ modules:
     - type: script
       scripts:
         - installandroidudev.sh
-        - ensureautoupdates.sh
         - fixupstreamicdloaderbug.sh
 
     - type: rpm-ostree
@@ -149,6 +148,7 @@ modules:
 
     - type: script
       scripts:
+        - ensureautoupdates.sh
         - settheming.sh
 
     - type: wayblue-signing
