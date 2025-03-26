@@ -9,17 +9,6 @@ modules:
       scripts:
         - installsignedkernel.sh
 
-    - type: containerfile
-      snippets:
-        - RUN rpm-ostree install just powerstat
-        - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /
-        - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-luks.noarch.rpm /
-        - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-just.noarch.rpm /
-        - RUN rpm -ivh /ublue-os-signing.noarch.rpm
-        - RUN rpm -ivh /ublue-os-luks.noarch.rpm
-        - RUN rpm -ivh /ublue-os-just.noarch.rpm
-
-
     - type: script
       scripts:
         - installandroidudev.sh
@@ -161,7 +150,6 @@ modules:
     - type: script
       scripts:
         - settheming.sh
-        - addbrewjustimport.sh
 
     - type: wayblue-signing
       source: local
