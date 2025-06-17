@@ -162,7 +162,7 @@ modules:
 
     - type: gschema-overrides
       include:
-        - zz1-secureblue-theming.gschema.override
+        - zz1-wayblue-theming.gschema.override
 
     - type: script
       scripts:
