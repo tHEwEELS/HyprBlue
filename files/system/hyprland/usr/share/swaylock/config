@@ -1,4 +1,4 @@
-image=~/usr/share/swaylock/background/bg-image.jpg
+image=/usr/share/swaylock/background/bg-image.jpg
 
 indicator-radius=200
 indicator-thickness=30
