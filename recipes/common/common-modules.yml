@@ -64,6 +64,7 @@ modules:
         - alsa-firmware
         - p7zip
         - distrobox
+        - gparted
         
       # sound
         - wireplumber
